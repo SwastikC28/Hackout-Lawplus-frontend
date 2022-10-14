@@ -1,0 +1,36 @@
+.main-card {
+  max-width: 20rem;
+  border-style: solid;
+  border-color: #fc76a1;
+  z-index: 1;
+  color: rgb(83, 8, 8);
+  font-family: 'Inter', sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+  float: right;
+  color: white;
+  background-color: #30303d;
+  border-radius: '1vw';
+  border-style: 'solid';
+}
+
+.main-card a {
+  background-color: #fc76a1;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 1vw;
+  float: right;
+  margin: 0.5vw;
+}
+
+.main-card i {
+  color: #fc76a1;
+  margin: 0 0.2rem;
+}
