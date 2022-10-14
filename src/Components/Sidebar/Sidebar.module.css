@@ -1,0 +1,40 @@
+.side-bar{
+    background-color:#1D1D27;
+    text-align: left;
+    border-bottom-right-radius: 1vw;
+}
+
+.side-bar table{
+    margin-top: 3vw;
+}
+
+.side-bar tbody{
+    color: white;
+}
+
+.side-bar td{
+    padding: 1vw;
+    border-radius: 0.5vw;
+    background-color: #272732;
+}
+
+.side-bar i{
+    background-color: #FC76A1;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 1vw;
+}
+
+.side-bar span{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.side-bar tr{
+    height: 1vw;
+}
+
+.side-bar td{
+    padding: 1vw;
+    border-radius: 0.5vw;
+}

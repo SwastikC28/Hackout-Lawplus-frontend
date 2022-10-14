@@ -1,36 +1,23 @@
-import MapContainer from "../MapContainer/MapContainer"
-import SideBar from "../Sidebar/Sidebar"
+import MapContainer from '../MapContainer/MapContainer';
+import SideBar from '../Sidebar/Sidebar';
+import classes from './MainContainer.module.css';
 
 const MainContainer = () => {
-    return <div>
+  return (
+    <>
+      <div className="container-fluid" style={{ backgroundColor: '#181820' }}>
+        <div className="row">
+          <div className={`col-2 ${classes['sidebar-containe']}`}>
+            <SideBar />
+          </div>
 
-        <div className="container-fluid" style={{ backgroundColor: "#181820" }}>
-            <div className="row">
-                <div className="col-2" style={{
-                    backgroundColor: "#1D1D27",
-
-                }}>
-
-                    <SideBar />
-
-                </div>
-
-                <div className="col-10" style={{
-                    backgroundColor: "#181820",
-
-                }}>
-
-                    <MapContainer />
-
-                </div>
-
-            </div>
+          <div className={`col-10 ${classes['map-container']}`}>
+            <MapContainer />
+          </div>
         </div>
-
-
-
-
-    </div>
-}
+      </div>
+    </>
+  );
+};
 
 export default MainContainer;
