@@ -1,11 +1,10 @@
 import React from 'react';
-import Case from './Components/Case/Case';
+import Cases from './Components/Cases/Cases';
 
 function App() {
   return (
     <>
-      {/* <h1>Hackout</h1> */}
-      <Case/>
+      <Cases />
     </>
   );
 }
