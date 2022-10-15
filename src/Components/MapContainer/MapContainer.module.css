@@ -1,0 +1,13 @@
+.map-container{
+    background-color: yellow;
+    text-align: center;
+}
+
+/* .map-container button{
+    background-color:#FC76A1 ;
+} */
+
+.map-container i{
+    font-size: 24px;
+    color: #FAB91D;
+}

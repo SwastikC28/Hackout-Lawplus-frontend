@@ -4,11 +4,19 @@ const initialState = {
   name: '',
   age: '',
   email: '',
+  role: '',
 };
 const userSlice = createSlice({
-  name: 'user',
+  name: 'User',
   initialState,
-  reducers: {},
+  reducers: {
+    replaceUserData(state, action) {
+      state.name = action.payload.name;
+      state.age = action.payload.age;
+      state.email = action.payload.email;
+      state.role = action.payload.role;
+    },
+  },
 });
 
 export const userActions = userSlice.actions;
