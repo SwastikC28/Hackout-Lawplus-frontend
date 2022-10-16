@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | LawPlus</title>
+  <link rel="icon" href="assets/shield.png" type="image/icon type">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' rel='stylesheet' />
+
+</head>
+<body>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+    body {
+      background-color: #1D1D26;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    main {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h2 {
+      color: #e7ebf2;
+      margin-bottom: .40em;
+    }
+
+    h1 {
+      color: #e7ebf2;
+      font-size: 12.5rem;
+      letter-spacing: .10em;
+      margin: .025em 0;
+      text-shadow: .05em .05em 0 rgba(0, 0, 0, .25);
+      white-space: nowrap;
+
+      @media(max-width: 30rem) {
+        font-size: 8.5rem;
+      }
+    }
+
+    p {
+      color: #ccc;
+      margin-top: 0;
+    }
+
+    span {
+      animation: spooky 2s alternate infinite linear;
+      color: #fc76a1;
+      display: inline-block;
+    }
+
+    @keyframes spooky {
+      from {
+        transform: translatey(.15em) scaley(.95);
+      }
+
+      to {
+        transform: translatey(-.15em);
+      }
+    }
+  </style>
+  <main>
+    <h1>4<span><i class="fas fa-ghost"></i></span>4</h1>
+    <h2>Error: 404 page not found</h2>
+    <p>Sorry, the page you're looking for cannot be accessed</p>
+    <!-- <p> <button style="height: 40px; width: 75px; background-color:#30303D; border: none; color: white; 
+    border-radius: 1vw; border-style: solid; border-color: #1D1D26;">Back</button> </p> -->
+  </main>
+</body>
+
+</html>

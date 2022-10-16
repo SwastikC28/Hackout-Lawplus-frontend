@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+         
+        <meta property="og:title" content="LawPlus">
+        <meta property="og:description" content="Through public assistance, an interactive and dynamic crime tracking web application with strong GIS-like analytics features to detect and battle crime hotspots.">
+        <meta property="og:image" content="https://i.imgur.com/U3dSzWl.png">
+        <meta property="og:url" content="https://lawplus.live">
+    <title>LawPlus</title>
+    <link rel="icon" href="assets/shield.png" type="image/icon type">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+    <!--Javascript (Modal Trigger)  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-color: #1D1D26; font-family: 'Work Sans', sans-serif; max-width: 1900px;">
+
+
+    <cool-ad>
+        <template class="ad__desktop">
+
+            <!-- Banner -->
+            <div id="banner" style="text-align: center;">
+                <h1 style="color: white; font-weight:800; font-size: 8vw; margin-bottom: 0px;">Law<span
+                        style="color: #fc76a1;">Plus</span><span style="background: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); background-clip: text; -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">.</span></h1>
+                <p style="color: #C3C3D9; text-align: center;">Interactive and dynamic crime tracking web application.
+                </p>
+                <br>
+                <div style="color: white; text-align: center;">
+                    <button type="button" class="btn btn-lg hover-item" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                        style="border-color:#1D1D26; background-image: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); margin-right: 1vw; border-radius: 1vw; color: white; font-weight: 400;">Sign
+                        up</button>
+                    <button type="button" class="btn btn-lg hover-item" onclick="prelogin()"
+                        style="background-color: #30303D; margin-left: 1vw; border-radius: 1vw; color: white; font-weight: 400;">Sign
+                        in</button>
+                </div>
+            </div>
+
+            <!-- data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom" -->
+
+            <!--Sign up slider-->
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+                aria-labelledby="offcanvasBottomLabel"
+                style="height: 55%; max-height: 492px; max-width: 1833px; background-color: #1D1D26; margin-left: 1vw; margin-right: 1vw; border-top-left-radius: 2vw; border-top-right-radius: 2vw;">
+                <div class="offcanvas-header"
+                    style="background-color: #1D1D26; border-radius: 2vw; padding-bottom: 0px;">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel" style="color: white; font-weight: 500;">Sign
+                        up
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                        style="color: white;" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body small" style="background-color: #1D1D26; overflow: hidden;">
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <input style="background-color: #1D1D26; color:white;" type="name"
+                                        class="form-control" id="signupname" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input style="background-color: #1D1D26; color:white;" type="lname"
+                                        class="form-control" id="signuplname" placeholder="Last Name">
+                                </div>
+
+                                <div class="col-6">
+                                    <input style="background-color: #1D1D26; color:white;" type="email"
+                                        class="form-control" id="signupemail" placeholder="Email">
+                                </div>
+                                <div class="col-6">
+                                    <input style="background-color: #1D1D26; color:white;" class="form-control"
+                                        id="signupphoneno" placeholder="Contact Number">
+                                </div>
+
+                                <div class="col-6">
+                                    <input style="background-color: #1D1D26; color:white;" type="password"
+                                        class="form-control" id="signuppassword" placeholder="Password">
+                                </div>
+                                <div class="col-6">
+                                    <!-- <input style="background-color: #1D1D26; color:white;" 
+                                        class="form-control" id="signuppost" placeholder="Post"> -->
+                                    <select id="signuppost" style="background-color: #1D1D26;"
+                                        class="form-select text-muted" aria-label="Default select example">
+                                        <option selected value="null">Post</option>
+                                        <option value="Commissioner of Police" style="color: white;">Commissioner of
+                                            Police</option>
+                                        <option value="Superintendent of Police" style="color: white;">Superintendent of
+                                            Police</option>
+                                        <option value="Inspector of Police" style="color: white;">Inspector of Police
+                                        </option>
+                                        <option value="Sergeant Major" style="color: white;">Sergeant Major</option>
+                                        <option value="Corporal" style="color: white;">Corporal</option>
+                                        <option value="Constable" style="color: white;">Constable</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <input style="background-color: #1D1D26; color:white;" type="password"
+                                        class="form-control" id="signupcpassword" placeholder="Confirm Password">
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="d-grid gap-2">
+                                        <!-- <a href="user.php" style="border-radius: 2vw" class="btn" style="background-image: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c);"
+                                        type="button">Create Account</a> -->
+                                        <br>
+                                        <!-- class="btn btn-lg hover-item" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-dismiss="offcanvas" -->
+                                        <a onclick="signup()" type="submit" class="btn btn-lg hover-item zoro"
+                                            style="border-color:#1D1D26; background-image: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); margin-right: 1vw; border-radius: 1vw; color: white; font-weight: 400;">Create
+                                            Account</a>
+                                        <!-- <br>
+                                    <a href="user.php" style="background-color: white; border-color: #D9D9DB"
+                                        class="btn" type="button"><img src="logos/facebook.png">&nbsp&nbspSign up with
+                                        Facebook</a>
+                                    <a href="user.php" style="background-color: white; border-color: #D9D9DB"
+                                        class="btn" type="button"><img src="logos/google.png">&nbsp&nbspSign up with
+                                        Google</a> -->
+
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-6">
+
+                            <div class="col-12">
+                                <!-- <p style="text-align:right; font-size: 13px; color: #3D3D3D">Already have an account? <a
+                                    href="" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+                                    data-bs-dismiss="modal">Sign In</a> </p> -->
+                            </div>
+
+                            <div class="col-12" style="text-align: center;">
+                                <img class="img-fluid" src="assets/signup2.png" style="height: 375px; width:375px;">
+                            </div>
+
+                            <div class="col-12">
+
+                                <!-- <p style="text-align:center; font-size: 11px; color: black; opacity: 0.6">By signing up, you
+                                agree to our Terms & conditions, Privacy policy</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--Sign in slider-->
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2"
+                aria-labelledby="offcanvasBottomLabel"
+                style="height: 55%; max-height: 497px; width: 25%; max-width: 462px; left: 38% ; background-color: #1D1D26; margin-left: 1vw; margin-right: 1vw; border-top-left-radius: 2vw; border-top-right-radius: 2vw;">
+                <div class="offcanvas-header" style=" background-color: #1D1D26; border-radius: 2vw;">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel" style="color: white; font-weight: 500;">Sign
+                        in
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                        style="color: white;" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body small" style="background-color: #1D1D26; overflow: hidden;">
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="row g-3" id="login_div">
+                                <div class="col-12">
+                                    <input style="background-color: #1D1D26; color:white;" type="email"
+                                        class="form-control" id="loginemail" placeholder="Email">
+                                </div>
+                                <div class="col-12">
+                                    <input style="background-color: #1D1D26; color:white;" type="password"
+                                        class="form-control" id="loginpassword" placeholder="Password">
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                        <br>
+                                        <a onclick="login()" class="btn btn-lg hover-item"
+                                            style="border-color:#1D1D26; background-image: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); margin-right: 1vw; border-radius: 1vw; color: white; font-weight: 400;"
+                                            type="submit">Sign In</a>
+                                        <!-- <br>
+                                    <a href="user.php" style="background-color: white; border-color: #D9D9DB"
+                                        class="btn" type="button"><img src="logos/facebook.png">&nbsp&nbspSign in with
+                                        Facebook</a>
+                                    <a href="user.php" style="background-color: white; border-color: #D9D9DB"
+                                        class="btn" type="button"><img src="logos/google.png">&nbsp&nbspSign in with
+                                        Google</a>
+                                    <br> -->
+
+                                        <br>
+                                        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+                                            aria-controls="offcanvasBottom"
+                                            style="margin-left: 20%; font-weight: 500; font-size: 12px; color: #fc76a1; cursor: pointer;">Create
+                                            account</a>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Success Modal -->
+            <div class="modal fade" id="successmodal" tabindex="-1" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color: #1D1D26; border-radius: 2vw;">
+                        <div class="modal-header"
+                            style="background-color: #1D1D26; border-color: #1D1D26; border-radius: 2vw; ">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: white; font-weight: 700;">
+                                Account
+                                Created !</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="background-color: #1D1D26; text-align: center; ">
+                            <i class="far fa-check-circle" style="font-size: 12rem; color: #fc76a1;"></i>
+                        </div>
+                        <div
+                            style="background-color: #1D1D26; text-align: center; border-radius: 2vw; margin-bottom: 1.5vw;">
+                            <br>
+                            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2"
+                                data-bs-dismiss="modal" aria-controls="offcanvasBottom" type="button"
+                                class="btn-lg hover-item"
+                                style="background-color: #fc76a1; border-color: #fc76a1; font-weight: 500; color: white; border-radius: 1vw;">Login</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- failure Modal -->
+            <div class="modal fade" id="failuremodal" tabindex="-1" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color: #1D1D26; border-radius: 2vw;">
+                        <div class="modal-header"
+                            style="background-color: #1D1D26; border-color: #1D1D26; border-radius: 2vw; ">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: white; font-weight: 700;">
+                                Error</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="background-color: #1D1D26; text-align: center; color: #fc76a1">
+                            <i style="font-size: 7vw;" class="fas fa-exclamation-triangle"></i>
+                            <br><br>
+                            <p id="error" style="color: #fc76a1"></p>
+                        </div>
+                        <div
+                            style="background-color: #1D1D26; text-align: center; border-radius: 2vw; margin-bottom: 1.5vw;">
+                            <br>
+                            <button data-bs-dismiss="modal" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                                class="btn-lg hover-item"
+                                style="background-color: #fc76a1; border-color: #fc76a1; font-weight: 500; color: white; border-radius: 1vw;">Try
+                                Again</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- failure 2 Modal -->
+            <div class="modal fade" id="failuremodal2" tabindex="-1" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="background-color: #1D1D26; border-radius: 2vw;">
+                        <div class="modal-header"
+                            style="background-color: #1D1D26; border-color: #1D1D26; border-radius: 2vw; ">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: white; font-weight: 700;">
+                                Error</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="background-color: #1D1D26; text-align: center; color: #fc76a1">
+                            <i style="font-size: 7vw;" class="fas fa-exclamation-triangle"></i>
+                            <br><br>
+                            <p id="error2" style="color: #fc76a1"></p>
+                        </div>
+                        <div
+                            style="background-color: #1D1D26; text-align: center; border-radius: 2vw; margin-bottom: 1.5vw;">
+                            <br>
+                            <button data-bs-dismiss="modal" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom"
+                                class="btn-lg hover-item"
+                                style="background-color: #fc76a1; border-color: #fc76a1; font-weight: 500; color: white; border-radius: 1vw;">Try
+                                Again</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                #banner {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    width: 50em;
+                    height: 18em;
+                    margin-top: -9em;
+                    margin-left: -25em;
+                    border: 1px solid #1D1D26;
+                    background-color: #1D1D26;
+                }
+
+
+
+                .hover-item {
+                    transition: 0.3s;
+                }
+
+                .hover-item:hover {
+                    transform: translate(0, -5px);
+                }
+
+                .form-control {
+                    border: 2px solid #1D1D26;
+                }
+
+                .form-select {
+                    border: 2px solid #1D1D26;
+                }
+
+                .form-select:hover {
+                    border-color: #fc76a1;
+                }
+
+
+                .form-control:hover {
+
+                    border-color: #fc76a1;
+                }
+            </style>
+        </template>
+
+        <template class="ad__mobile" style="overflow: hidden;">
+
+            <!-- Banner -->
+            <div id="banner2" style="text-align: center;">
+                <h1 style="color: white; font-weight:800; font-size: 15vw; margin-bottom: 0px; margin-left: 5vw;">
+                    Law<span style="color: #fc76a1;">Plus</span><span style="background: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); background-clip: text; -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;">.</span></h1>
+                <hr style="color: #C3C3D9; width: 50%; margin-left: 25%;">
+                <p style="color: #C3C3D9; text-align: center; font-size: 3.7vw;">Dynamic crime tracking application<br>
+                    Click below to download
+                </p>
+                <br><br>
+                <a class="btn btn-lg hover-item"
+                    href="https://firebasestorage.googleapis.com/v0/b/crime-mapping-7610d.appspot.com/o/Apk%2FLawPlus.apk?alt=media&token=5bb5a8dc-f3be-4012-af35-7c5cce614095"
+                    style="border-color:#1D1D26; background-image: linear-gradient(to top right, #bb3fdd, #fb6da9, #ff9f7c); margin-right: 1vw; border-radius: 30px; color: white; font-weight: 400;"><i
+                        class="fas fa-download"></i> Download</a>
+            </div>
+
+
+
+            <style>
+                #banner2 {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    width: 25em;
+                    height: 15em;
+                    margin-top: -5em;
+                    margin-left: -12.5em;
+                    border: 1px solid #1D1D26;
+                    background-color: #1D1D26;
+                }
+
+                .hover-item {
+                    transition: 0.3s;
+                }
+
+                .hover-item:hover {
+                    transform: translate(0, -5px);
+                }
+
+                .form-control {
+                    border: 2px solid #1D1D26;
+                }
+
+                .form-control:hover {
+
+                    border-color: #fc76a1;
+                }
+            </style>
+
+        </template>
+
+    </cool-ad>
+
+
+
+    <script>
+        class AdComponent extends HTMLElement {
+            connectedCallback() {
+                const isMobile = matchMedia('(max-width: 800px)').matches;
+                const ad = document.currentScript.closest('.ad');
+                const content = this
+                    .querySelector(isMobile ? '.ad__mobile' : '.ad__desktop')
+                    .content;
+
+                this.appendChild(document.importNode(content, true));
+            }
+        }
+
+        customElements.define('cool-ad', AdComponent);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAOghuR0V463DQDrclJBRqMNH7YDqavNmY",
+            authDomain: "crime-mapping-7610d.firebaseapp.com",
+            projectId: "crime-mapping-7610d",
+            storageBucket: "crime-mapping-7610d.appspot.com",
+            messagingSenderId: "928787398601",
+            appId: "1:928787398601:web:56f96b0e2a1b41aee47218",
+            measurementId: "G-KW51ES0TGV"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
